@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/registration-form.css" type="text/css">
+
+  <title>Registration</title>
+</head>
+<body onload="myLoad()">
+
+
+<div class="registration-form">
+  <h3>Registration Form</h3>
+  <p> <%=(typeof alertMsg!='undefined')? alertMsg:''%></p>
+<form method="post" action="/">
+  <div class="form-container">  
+    <div><input type="email" id="myTextarea" placeholder="Email Address" name="email_address" ></div>
+ </div>
+  <div class="form-container">
+   <div><input type="text" id="myTextarea1" placeholder="Login" name="login" ></div>
+   <div><input type="text" id="myTextarea2" placeholder="Real Name" name="real_name" ></div>
+</div>
+<div class="form-container">
+  <div><input type="password" placeholder="Password" name="password" required></div>
+</div>
+<div class="form-container">
+  <div><input type="text" id="myTextarea3" placeholder="year-month-day" name="birth_date" requiored ></div>
+</div>
+<div class="form-container">
+  <div>
+    <label for="countries">Choose your country:</label>
+  <select name="countries" id="myTextarea4">
+    <% for (var i = 0; i<countries.length; i++) { %>
+      <option>
+         <%= countries[i].country %>
+      </option>
+      <% } %>
+  </select>
+
+  </div>
+</div>
+  <div class="form-container">
+    <div class="agree_with_terms"><input type="checkbox" id="agree" name="agree" value="agree" required>
+    <label for="agree">I agree with terms and conditions</label>
+    </div>
+  </div>
+<button type="submit" onclick="mySave()">Register Now</button>
+<a href="/login">Login</a>
+</form>
+</div>
+
+<script>
+  function mySave() {
+    let myContent = document.getElementById("myTextarea").value;
+    sessionStorage.setItem("myContent", myContent);
+
+    let myContentlogin = document.getElementById("myTextarea1").value;
+    sessionStorage.setItem("myContentlogin", myContentlogin);
+
+    let myContentrealname = document.getElementById("myTextarea2").value;
+    sessionStorage.setItem("myContentrealname", myContentrealname);
+
+    let myContentbirthdate = document.getElementById("myTextarea3").value;
+    sessionStorage.setItem("myContentbirthdate", myContentbirthdate);
+    
+    let myContentcountry = document.getElementById("myTextarea4").value;
+    sessionStorage.setItem("myContentcountry", myContentcountry);
+
+  }
+  function myLoad() {
+    let myContent = sessionStorage.getItem("myContent");
+    document.getElementById("myTextarea").value = myContent;
+    let myContentlogin = sessionStorage.getItem("myContentlogin");
+    document.getElementById("myTextarea1").value = myContentlogin;
+    let myContentrealname = sessionStorage.getItem("myContentrealname");
+    document.getElementById("myTextarea2").value = myContentrealname;
+    let myContentbirthdate = sessionStorage.getItem("myContentbirthdate");
+    document.getElementById("myTextarea3").value = myContentbirthdate;
+    let myContentcountry = sessionStorage.getItem("myContentcountry");
+    document.getElementById("myTextarea4").value = myContentcountry;
+  }
+</script>
+</body>
+</html>
+
+

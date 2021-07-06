@@ -1,0 +1,36 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+.login-form {
+    margin-top: 300px;
+    text-align: center;
+}
+
+.login-form h3 {
+    font-size: 30px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: green;
+    margin-left: 50px;
+}
+
+.login-form-footer {
+    margin-top: 335px;
+}
+
+.form-container {
+    margin-bottom: 15px;
+}
+
+.form-container input {
+    width: 250px;
+    height: 40px;
+}

@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.registration-form {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.registration-form h3 {
+    font-size: 40px;
+    color: red;
+}
+
+.form-container div input {
+    margin-top: 15px;
+}
+
+.form-container div select {
+    margin-top: 15px;
+}
+
+.registration-form button {
+    margin-top: 20px;
+}
+
+.registration-form a {
+    margin-top: 20px;
+    margin-left: 50px;
+    color: red;
+    text-decoration: none;
+}
+
